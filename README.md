@@ -1,115 +1,121 @@
-# Student-Teacher-Booking-Appointment
-Student-Teacher Booking Appointment System
-This is a MERN stack project designed to facilitate the booking of appointments between students and teachers. The system includes functionalities for admins to manage teachers, for teachers to manage their appointments, and for students to book appointments with teachers.
 
-Table of Contents
-Features
-System Modules
-Admin
-Teacher
-Student
-Tech-Stack-Used
-Installation
-Usage
-Screenshots
-Login Acess
-Contributing
-Features
-Admin management for adding, updating, and deleting teachers and approving student registrations.
-Teacher functionalities for managing their appointment schedules, approving/cancelling appointments, sending email alerts to students, viewing messages, and viewing all appointments.
-Student functionalities for registering, booking appointments with teachers, sending email alerts to teachers, and sending messages.
-System Modules
-Admin
-Add Teacher (Name, Department, Subject, etc.)
-Update/Delete Teacher
-Approve Registration Student
-Teacher
-Login
-Schedule Appointment
-Approve/Cancel Appointment
-Send Email Alerts to Students
-View Messages
-View All Appointments
-Student
-Register
-Login
-Book Appointment
-Send Email Alert to Teacher
-Send Message
-Tech-Stack-Used
-Frontend
+# Student-Teacher Booking Appointment System
 
+This project designed to facilitate the booking of appointments between students and teachers. The system includes functionalities for admins to manage teachers, for teachers to manage their appointments, and for students to book appointments with teachers.
+
+## Table of Contents
+- [Features](#features)
+- [System Modules](#system-modules)
+  - [Admin](#admin)
+  - [Teacher](#teacher)
+  - [Student](#student)
+- [Tech-Stack-Used](#tech-stack-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Login Acess](#login)
+- [Contributing](#contributing)
+
+## Features
+- Admin management for adding and deleting teachers and approving student registrations.
+- Teacher functionalities for managing their appointment schedules, approving/cancelling appointments, viewing messages, and viewing all appointments.
+- Student functionalities for registering, booking appointments with teachers, and sending messages.
+
+## System Modules
+
+### Admin
+- Add Teacher (Name, Department, Subject, etc.)
+- Delete Teacher
+- Approve Registration Student
+
+### Teacher
+- Login 
+- Approve/Cancel Appointment
+- View Messages
+- View All Appointments
+
+### Student
+- Register
+- Login
+- Book Appointment
+- Send Message
+
+## Tech-Stack-Used
+
+**Frontend**
+```bash
 vite (bundler-react)
 tailwindcss (styling)
 react-icons (icons)
 react-router-dom (routing)
 react-toastify (notify)
 axios (API)
-Backend
-
+```
+**Backend**
+```bash
 express (API)
 jwt-token (token)
 nodemail (MAIL)
 bcrypt (encryption)
-Installation
+```
+
+## Installation
+
 To run this project locally, follow these steps:
 
-Clone the repository:
+1. **Clone the repository:**
+    git clone https://github.com/goyal2506/Student-Teacher-Booking-Appointment.git
+    cd student-teacher-booking
 
-git clone https://github.com/rudrax14/MERN_STACK-StudentTeacher-Booking-Appointment
-Install backend dependencies:
+2. **Install  dependencies:**
+    npm install
 
-cd backend
-npm install
-Install frontend dependencies:
+3. **Start the server:**
+    node index`
 
-cd frontend
-npm install
-Set up environment variables for the backend:
+4. **Open the application in the browser:**
+    http://localhost:1234
 
-Create a .env file in the backend directory with the following content:
 
-DB_URL=''
-JWT_KEY = ''
-PORT = 5000
+## Usage
 
-# mail integration 
+1. **Admin:**
+    - Log in to the admin dashboard.
+    - Add, update, or delete teachers.
+    - Approve student registrations.
 
-MAIL_HOST = smtp.gmail.com
-MAIL_USER = 'your_mail'
-MAIL_PASS = 
-Run the backend server:
+2. **Teacher:**
+    - Log in to the teacher portal.
+    - Schedule, approve, or cancel appointments.
+    - View messages and all appointments.
 
-cd backend
-npm run dev
-Run the frontend server:
+3. **Student:**
+    - Register and log in to the student portal.
+    - Book appointments with teachers.
+    - messages to teachers.
 
-cd frontend
-npm run dev
-Set up environment variables for frontend:
 
-Create a .env.local file in the frontend directory with the following content:
+## Login
 
-VITE_BACKEND_URL='http://localhost:5000'
-The application should now be running on http://localhost:5173/.
+**Student**
+ ```bash
+email: kapil@gmail.com
+Password: kk
+ ```
+**Teacher**
+ ```bash
+email: rekha@gmail.com
+Password: kk
+ ```
+**Admin**
+ ```bash
+email: kapilgoyal2506@gmail.com
+Password: kapil12345678
+ ```
+**Note: Don't Spam**
 
-Usage
-Admin:
 
-Log in to the admin dashboard.
-Add, update, or delete teachers.
-Approve student registrations.
-Teacher:
+## Thank You 
 
-Log in to the teacher portal.
-Schedule, approve, or cancel appointments.
-Send email alerts to students.
-View messages and all appointments.
-Student:
-
-Register and log in to the student portal.
-Book appointments with teachers.
-Send email alerts and messages to teachers.
-Screenshots
-Landing Page
+**Keep Coding**
 
