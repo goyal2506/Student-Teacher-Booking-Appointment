@@ -44,21 +44,25 @@ This project designed to facilitate the booking of appointments between students
 
 **Frontend**
 ```bash
-vite (bundler-react)
-tailwindcss (styling)
-react-icons (icons)
-react-router-dom (routing)
-react-toastify (notify)
-axios (API)
+HTML
+ CSS
+ JavaScript
+ EJS
 ```
 **Backend**
 ```bash
-express (API)
-jwt-token (token)
-nodemail (MAIL)
-bcrypt (encryption)
+Node.js
+Express.js
 ```
-
+**Database**
+```bash
+Node.js
+Express.js
+```
+**Templating Engine**
+```bash
+ EJS
+```
 ## Installation
 
 To run this project locally, follow these steps:
