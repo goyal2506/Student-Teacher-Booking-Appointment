@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .msg{
+          margin: 0 auto;
+          max-width: 800px;
+          padding: 0 20px;
+        }
+        
+        .container {
+          border: 2px solid #dedede;
+          background-color: #f1f1f1;
+          border-radius: 5px;
+          padding: 10px;
+          margin: 10px 0;
+        }
+        
+        .darker {
+          border-color: #ccc;
+          background-color: #ddd;
+        }
+        
+        .container::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        
+        .container img {
+          float: left;
+          max-width: 60px;
+          width: 100%;
+          margin-right: 20px;
+          border-radius: 50%;
+        }
+        
+        .container img.right {
+          float: right;
+          margin-left: 20px;
+          margin-right:0;
+        }
+        
+        .time-right {
+          float: right;
+          color: #aaa;
+        }
+        
+        .time-left {
+          float: left;
+          color: #999;
+        }
+        button{
+            padding: 10px;
+            cursor: pointer;
+        }
+        </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>S_T_A_S</h2>
+            <ul>
+                <li><a href="/teacher/profile/<%= teachers._id %>"><i class="fa-solid fa-chart-line"></i> My profile</a></li>
+                <li><a href="/teacher/messages/<%= teachers._id %>"><i class="fa-solid fa-chart-line"></i> All Messages</a></li>
+                <li><a href="/teacher/appointments/<%= teachers._id %>"><i class="fa-regular fa-user"></i> My Appointments</a></li>
+                <li><a href="/teacher/appointment-request/<%= teachers._id %>"><i class="fa-solid fa-chalkboard-user"></i> Appointment Requests</a></li>
+                <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
+        </div>
+        <div class="main_content">
+            <div class="header"> 
+                <p>Welcome!! To Teacher Pannel</p>
+                <div class="admin-info">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/042/891/253/small_2x/professional-teacher-avatar-illustration-for-education-concept-vector.jpg" alt="" height="30px" width="30px" style="border-radius: 50%;">
+                    <p>Teacher</p>
+                </div>
+            </div>
+            <% for (message of messages) { %>
+            <div class="msg">
+                <div class="container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH87TKQrWcl19xly2VNs0CjBzy8eaKNM-ZpA&s" alt="Avatar" style="width:100%;">
+                <p><b>From: <%= message.studentName %></b> </p>
+                <p style="margin-top:10px;"><%= message.message %></p>
+                <span class="time-right"><%= message.date.toString().slice(0,25) %> </span>
+              </div>
+              <form action="/Reead-message/<%= message._id %>" method="post">
+                <button type="submit">Read</button>
+            </form>
+            </div>
+            
+            <% } %>
+              
+        </div>
+        </div>
+        
+        </body>
+        </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>S_T_A_S</h2>
+            <ul>
+                <li><a href="/student/profile/<%= studentName._id %>"><i class="fa-solid fa-chart-line"></i> My profile</a></li>
+                <li><a href="/student/teacher-list/<%= studentName._id %>"><i class="fa-solid fa-chart-line"></i> All Teachers</a></li>
+                <li class="active"><a href="/student/appointment/<%= studentName._id %>"><i class="fa-regular fa-user"></i> My Appointments</a></li>
+                <li><a href="/student/book-appointment/<%= studentName._id %>"><i class="fa-solid fa-chalkboard-user"></i> Book an Appointment</a></li>
+                <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
+        </div>
+        <div class="main_content">
+            <div class="header"> 
+                <p>Welcome!! To Student Pannel</p>
+                <div class="admin-info">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH87TKQrWcl19xly2VNs0CjBzy8eaKNM-ZpA&s" alt="" height="30px" width="30px" style="border-radius: 50%;">
+                    <p>Student</p>
+                </div>
+            </div>
+  <div class="student-appointment">
+  <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>date</th>
+            <th>Student Name</th>
+            <th>Teachers Name</th>
+            <th>Purpose</th>
+            <th>Status</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <% for (appointment of appointments) { %>
+          <tr>
+            <td><%= appointment.date.toString().slice(0,25) %></td>
+            <td><%= studentName.name %></td>
+            <td><%= appointment.teacherName %></td>
+            <td><%= appointment.purpose %></td>
+            <td><%= appointment.status %></td>
+            
+            
+          </tr>
+        <% } %>
+      </tbody>
+  </table>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
