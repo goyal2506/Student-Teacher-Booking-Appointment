@@ -12,9 +12,8 @@ This project designed to facilitate the booking of appointments between students
 - [Tech-Stack-Used](#tech-stack-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Screenshots](#screenshots)
 - [Login Acess](#login)
-- [Contributing](#contributing)
+
 
 ## Features
 - Admin management for adding and deleting teachers and approving student registrations.
