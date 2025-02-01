@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>S_T_A_S</h2>
+            <ul>
+                <li><a href="/student/profile/<%= studentInfo._id %>"><i class="fa-solid fa-chart-line"></i> My profile</a></li>
+                <li><a href="/student/teacher-list/<%= studentInfo._id %>"><i class="fa-solid fa-chart-line"></i> All Teachers</a></li>
+                <li><a href="/student/appointment/<%= studentInfo._id %>"><i class="fa-regular fa-user"></i> My Appointments</a></li>
+                <li class="active"><a href="/student/book-appointment/<%= studentInfo._id %>"><i class="fa-solid fa-chalkboard-user"></i> Book an Appointment</a></li>
+                <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
+        </div>
+        <div class="main_content">
+            <div class="header"> 
+                <p>Welcome!! To Student Pannel</p>
+                <div class="admin-info">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH87TKQrWcl19xly2VNs0CjBzy8eaKNM-ZpA&s" alt="" height="30px" width="30px" style="border-radius: 50%;">
+                    <p>Student</p>
+                </div>
+            </div>
+<div class="appointment-form">
+    <form action="/student/book-appointment/<%= studentInfo._id %>" method="post">
+        <input type="text" name="studentName" value="<%= studentInfo.name %>">
+        <input type="text" name="student" id="" value="<%= studentInfo._id %>">
+       
+        <select id="teacher" name="teacherName" required>
+            <option value="" disabled selected>Select a teacher</option>
+            <% teachers.forEach(teacher => { %>
+            <option value="<%= teacher.name %>"><%= teacher.name %></option>
+            
+            <% }); %>
+        </select>
+        <select id="teacher" name="teacher" required>
+            <option value="" disabled selected>Select a teacher</option>
+            <% teachers.forEach(teacher => { %>
+            <option value="<%= teacher._id %>"><%= teacher.name %></option>
+            
+            <% }); %>
+        </select>
+        <label for="">Enter Date and Time : </label>
+        <input type="date" name="date">
+        <input type="time" name="date">
+        <label for="">Message for Teacher : </label> 
+        <textarea name="purpose" id="" ></textarea> 
+        <button type="submit">Send</button>
+    </form>
+</div>
+</div>
+</div>
+
+</body>
+</html>

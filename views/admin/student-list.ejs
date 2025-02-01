@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>S_T_A_S</h2>
+            <ul>
+                <li><a href="/admin/dashboard "><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="/login/admin_profile"><i class="fa-regular fa-user"></i> Profile</a></li>
+                <li><a href="/login/teacher-list"><i class="fa-solid fa-chalkboard-user"></i> Teachers List</a></li>
+                <li class="active"><a href="/login/student-list"><i class="fa-solid fa-graduation-cap"></i> Student List</a></li>
+                <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
+        </div>
+        <div class="main_content">
+            <div class="header"> 
+                <p>Welcome!! To Admin Pannel</p>
+                <div class="admin-info">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH87TKQrWcl19xly2VNs0CjBzy8eaKNM-ZpA&s" alt="" height="30px" width="30px" style="border-radius: 50%;">
+                    <p>Admin</p>
+                </div>
+            </div>
+<div class="pending ">
+    <h1 class="mb-4">Pending Student Registrations</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (pending of pendings) { %>
+              <tr>
+                <td><%= pending._id %></td>
+                <td><%= pending.name %></td>
+                <td><%= pending.email %></td>
+                <td><%= pending.class %></td>
+                <td style="display: flex; gap: 1rem;">
+                    <form method="POST" action="/approve/<%= pending._id %>" class="d-inline">
+                        <button  class="btn btn-success btn-sm btn-style" onclick="return confirm('Are you sure you want to Approve this Student?')" >Approve</button>
+                    </form>
+                    <form method="POST" action="/reject/<%= pending._id %>" class="d-inline">
+                        <button class="btn btn-danger btn-sm btn-style" onclick="return confirm('Are you sure you want to Reject this Student?')">Reject</button>
+                    </form>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        
+    </table>
+</div>
+<div class="student-list">
+   <h2>All Students list</h2>
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone number</th>
+        <th>Gender</th>
+        <th>Class</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (student of students) { %>
+        <tr>
+          <td><%= student._id %></td>
+          <td><%= student.name %></td>
+          <td><%= student.email %></td>
+          <td><%= student.p_no %></td>
+          <td><%= student.gender %></td>
+          <td><%= student.class %></td>
+          <td><%= student.status %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table> 
+</div>
+
+
+</div>
+</div>
+
+</body>
+</html>
